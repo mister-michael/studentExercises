@@ -83,6 +83,7 @@ for inst in instructor_list:
 
 for cohort in cohort_list:
     print(f"------{cohort.name}------")
+    print("")
 
     for stud in cohort.students:
         i = len(stud.ex_list)
@@ -98,3 +99,4 @@ for cohort in cohort_list:
                 ex_pen += f"{ex}" + "."
         print(f"{stud.first_name} {stud.last_name} is working on {ex_pen}")
         print("")
+    print("")
