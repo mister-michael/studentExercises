@@ -1,6 +1,15 @@
-class Instructor:
+class NSS_Person:
+    def __init__(self):
+        self.first = ""
+        self.last = ""
+        self.slack = ""
+        self.cohort = ""
+        
+
+class Instructor(NSS_Person):
 
     def __init__(self, first, last, slack, cohort, specialty):
+        NSS_Person.__init__(self)
         self.first = first
         self.last = last
         self.slack = slack
@@ -12,12 +21,13 @@ class Instructor:
             student.ex_list.append(exercise)
 
 
-class Student:
+class Student(NSS_Person):
 
     def __init__(self, first, last, slack, cohort):
-        self.first_name = first
-        self.last_name = last
-        self.slack_handle = slack
+        NSS_Person.__init__(self)
+        self.first = first
+        self.last = last
+        self.slack = slack
         self.cohort = cohort
         self.ex_list = list()
 
@@ -97,6 +107,6 @@ for cohort in cohort_list:
                     ex_pen += "and " + "".join(ex) + "."
             else:
                 ex_pen += f"{ex}" + "."
-        print(f"{stud.first_name} {stud.last_name} is working on {ex_pen}")
+        print(f"{stud.first} {stud.last} is working on {ex_pen}")
         print("")
     print("")
