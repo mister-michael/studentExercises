@@ -1,60 +1,7 @@
-class NSS_Person:
-    def __init__(self):
-        self.first = ""
-        self.last = ""
-        self.slack = ""
-        self.cohort = ""
-        
-
-class Instructor(NSS_Person):
-
-    def __init__(self, first, last, slack, cohort, specialty):
-        NSS_Person.__init__(self)
-        self.first = first
-        self.last = last
-        self.slack = slack
-        self.cohort = cohort
-        self.specialty = specialty
-
-    def assign_ex(self, exercise, *students):
-        for student in students:
-            student.ex_list.append(exercise)
-
-
-class Student(NSS_Person):
-
-    def __init__(self, first, last, slack, cohort):
-        NSS_Person.__init__(self)
-        self.first = first
-        self.last = last
-        self.slack = slack
-        self.cohort = cohort
-        self.ex_list = list()
-
-    def add_ex(self, exercise):
-        self.ex_list.append(exercise)
-
-
-class Cohort:
-
-    def __init__(self, name):
-        self.name = name
-        self.students = list()
-        self.instructors = list()
-
-    def add_student(self, student):
-        self.students.append(student)
-
-    def add_instructor(self, instructor):
-        self.instructors.append(instructor)
-
-
-class Exercise:
-
-    def __init__(self, name, language):
-        self.exercise = name
-        self.language = language
-
+from student import Student
+from cohort import Cohort
+from instructor import Instructor
+from exercise import Exercise
 
 D38 = Cohort("D38")
 D36 = Cohort("D36")
